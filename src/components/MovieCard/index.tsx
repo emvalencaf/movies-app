@@ -22,7 +22,7 @@ const MovieCard = ({ id, title, vote_average, srcImg, showLink = true }: MovieCa
 	return (
 		<Styled.Wrapper>
 			<Picture srcImg={srcImg} />
-			<Heading as="h2">
+			<Heading as="h2" color="primary">
 				{title}
 			</Heading>
 			<Styled.ContainerRating>
