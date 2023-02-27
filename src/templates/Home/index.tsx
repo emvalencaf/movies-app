@@ -15,7 +15,7 @@ import * as Styled from "./styles";
 // types
 import { Movie } from "../../shared-types/fetchMovies";
 
-const Home = () => {
+const HomeTemplate = () => {
 	// get params
 	const router = useRouter();
 	const { page: queryPage = 1 } = router.query;
@@ -44,40 +44,7 @@ const Home = () => {
 
 		getMovies();
 
-	}, [queryPage]);
-
-	/*
-	useEffect(() => {
-		// flag to clean the featch
-		// let wait: boolean = false;
-
-		// const controller = new AbortController();
-		// const signal = controller.signal;
-
-		const getMovies = async () => {
-
-			const response = await ControllerMovies.getTopMovies(queryPage)
-			console.log(response);
-			const {
-				results,
-				page,
-				total_pages,
-			} = response;
-
-			setTopMovies(() => ([...results]));
-			setCurrentPage((s) => page);
-			setTotalPages((s) => total_pages);
-		}
-
-		// if (!wait) getMovies();
-
-		// clean memory to avoid memory leak
-		return () => {
-			// wait = true;
-			// controller.abort();
-		}
-
-	}, [queryPage]);*/
+	}, [queryPage, currentPage, totalPages]);
 
 	return (
 		<Styled.Wrapper>
@@ -97,4 +64,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeTemplate;

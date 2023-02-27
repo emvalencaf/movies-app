@@ -13,14 +13,15 @@ export type FormProps = {
 	children: React.ReactNode;
 	btnIcon?: React.ReactNode;
 	btnText?: string;
-	onSubmit?: <T>(form: MutableRefObject<HTMLFormElement>) => Promise<T>;
+	onSubmit?: <T>(form?: MutableRefObject<HTMLFormElement>) => Promise<T>| void;
+	asyncOnSubmit?: boolean;
 	reference?: HTMLFormElement;
 };
 
 // icon
 import { Timer } from "@styled-icons/material-outlined"
 
-const Form = ({ children, btnIcon, btnText = "enviar", reference, onSubmit }: FormProps) => {
+const Form = ({ children, btnIcon, btnText = "enviar", reference, onSubmit, asyncOnSubmit = false }: FormProps) => {
 	// ref
 	const formRef = useRef<HTMLFormElement | null>(reference);
 
@@ -31,20 +32,29 @@ const Form = ({ children, btnIcon, btnText = "enviar", reference, onSubmit }: Fo
 
 
 	// handle events
-	const handleSubmit = async (event: SyntheticEvent) => {
+	const handleSubmit = (event: SyntheticEvent) => {
 		event.preventDefault();
 
-		if (onSubmit) {
-			setLoading(true);
-			try {
+		if (asyncOnSubmit) {
+			const asyncFn = async () => {
+				if (onSubmit) {
+					setLoading(true);
+					try {
 
-				await onSubmit(formRef);
+						await onSubmit(formRef);
 
-			} catch (err) {
-				setErrorMessage(err.message);
-				setVisible(true);
+					} catch (err) {
+						setErrorMessage(err.message);
+						setVisible(true);
+					}
+					setLoading(false);
+					return;
+				}
 			}
-			setLoading(false);
+
+			asyncFn();
+		} else {
+			if (onSubmit) onSubmit(formRef);
 		}
 	};
 

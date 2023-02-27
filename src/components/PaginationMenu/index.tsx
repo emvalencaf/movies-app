@@ -8,17 +8,30 @@ import * as Styled from './styles';
 
 // icon
 import { ArrowCircleLeft, ArrowCircleRight } from "@styled-icons/material-outlined"
+import { useGetPagination } from '../../hooks/useGetPagination';
 
 
 // types
 export type PaginationMenuProps = {
 	currentPage: number;
 	totalPages: number;
-	query: string;
+	query: string | string[];
 };
 
 const PaginationMenu = ({ currentPage, totalPages, query }: PaginationMenuProps) => {
 	const [pageLinks, setPageLinks] = useState<PageLinkProps[]>([]);
+	/*
+	const { nrEnd, nrStart } = useGetPagination(currentPage, totalPages);
+	console.log("nrEnd", nrEnd);
+	console.log("nrStart", nrStart);
+	// effect
+	useEffect(() => {
+		handleSetPagination(nrStart, nrEnd, currentPage, totalPages, query);
+
+		return () => {
+			setPageLinks(() => []);
+		}
+	}, [nrStart, nrEnd, currentPage, totalPages, query]);*/
 
 	// effect
 	useEffect(() => {
@@ -29,7 +42,7 @@ const PaginationMenu = ({ currentPage, totalPages, query }: PaginationMenuProps)
 				nrEnd
 			} = PaginationFormat.getNavegation(currentPage, totalPages);
 
-			handleSetPagination(nrStart, nrEnd, currentPage, query);
+			handleSetPagination(nrStart, nrEnd, currentPage, totalPages, query);
 		};
 
 		pagination();
@@ -40,11 +53,11 @@ const PaginationMenu = ({ currentPage, totalPages, query }: PaginationMenuProps)
 
 
 	// handle pagination
-	const handleSetPagination = (nrStart: number, nrEnd: number, currentPage: number, query: string) => {
+	const handleSetPagination = (nrStart: number, nrEnd: number, currentPage: number, totalPages: number, query: string | string[]) => {
 		if (currentPage > 1) {
 			setPageLinks((s) => [...s, {
 				link: `${query ?
-					`?q=${query}`
+					`?q=${query}&`
 					: `?`
 					}page=${currentPage - 1}`,
 				icon: <ArrowCircleLeft />,

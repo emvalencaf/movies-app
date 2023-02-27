@@ -16,6 +16,17 @@ export default class ControllerMovies {
 		}
 
 	}
+	static async getSearchedMovies(query: string[]| string, pageNumber: number | string[] | string){
+		let url: string = `${process.env.NEXT_PUBLIC_API_SEARCH}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&query=${query}`;
+
+		if (pageNumber) url = `${url}&page=${pageNumber}`;
+
+		try {
+			return await ServiceMovies.getMovies<FetchMovies>(url);
+		} catch (err) {
+			console.log(err);
+		}
+	}
 	static async getMovie(id:string) {
 
 		try {
