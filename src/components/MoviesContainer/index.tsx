@@ -14,6 +14,7 @@ import MovieCard from '../MovieCard';
 			{
 				movies.length >= 1 && movies.map((movie) => (
 					<MovieCard
+						key={movie.id}
 						id={movie.id}
 						title={movie.title}
 						vote_average={movie.vote_average}

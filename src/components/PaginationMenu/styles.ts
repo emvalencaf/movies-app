@@ -8,5 +8,6 @@ export const Ul = styled.ul`
 		justify-content: center;
 		gap: ${theme.spacings.tiny};
 		list-style: none;
+		background-color: aliceblue;
 	`}
 `;

@@ -1,7 +1,7 @@
 export type FetchMovies = {
 	results: Movie[];
-	page: string | number;
-	total_pages: string | number;
+	page: number;
+	total_pages: number;
 }
 
 export type Movie = {
