@@ -10,7 +10,7 @@ export type AchorProps = {
 	target?: "_blank" | "_self" | "_parent" | "_top";
 };
 
-const Achor = ({ children, icon, link, target }: AchorProps) => {
+const Achor = ({ children, icon, link, target = "_blank" }: AchorProps) => {
 	const nextLink = link.match(/^\//) ? true : false;
 
 	if (nextLink) return (
