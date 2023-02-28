@@ -14,14 +14,18 @@ export default class PaginationFormat{
 			nrStart = 1;
 			nrEnd = pageLimit;
 
-		} else if (currentPage - parseInt((pageLimit / 2).toString()) < totalPages) {
+		} else if (currentPage - parseInt((pageLimit / 2).toString()) > totalPages) {
 			// set last pages
 			nrStart = totalPages - pageLimit;
 			nrEnd = totalPages;
 		} else {
 			//set middle page
 			nrStart = currentPage - parseInt((pageLimit / 2).toString());
-			nrEnd = currentPage + parseInt((pageLimit / 2).toString());
+			// nrEnd = currentPage + parseInt((pageLimit / 2).toString());
+			currentPage + parseInt((pageLimit/2).toString()) > totalPages ?
+				nrEnd = totalPages
+				: nrEnd = currentPage + parseInt((pageLimit / 2).toString());
+			console.log("nrEnd: ", nrEnd);
 		}
 
 		return {

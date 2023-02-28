@@ -9,7 +9,9 @@ export const Wrapper = styled.div`
 		align-items: center;
 		justify-content: center;
 		background-color: ${theme.colors.quaternary};
-		max-width: ${theme.frameSizes.medium};
+		max-width: ${theme.frameSizes.smallMedium};
+		max-height: ${theme.frameSizes.largeMedium};
+		height: ${theme.frameSizes.largeMedium};
 		padding: ${theme.spacings.small};
 		border-radius: ${theme.spacings.small} 0px ${theme.spacings.small};
 		gap: ${theme.spacings.mediumSmall};
@@ -18,6 +20,15 @@ export const Wrapper = styled.div`
 			text-align: center;
 			margin: 0px;
 			padding: 0px;
+		}
+
+		& ${Picture} {
+			max-width: ${theme.frameSizes.small};
+
+			> img {
+				height: 100%;
+				width: 100%;
+			}
 		}
 
 	`}

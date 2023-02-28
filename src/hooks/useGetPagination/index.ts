@@ -16,7 +16,7 @@ export const useGetPagination = (currentPage: number, totalPages: number) => {
 				setNrStart(() => 1);
 				setNrEnd(() => pageLimit);
 
-			} else if (currentPage - parseInt((pageLimit / 2).toString()) > totalPages) {
+			} else if (currentPage - parseInt((pageLimit / 2).toString()) < totalPages) {
 
 				// set last pages
 				setNrStart(() => totalPages - pageLimit);
