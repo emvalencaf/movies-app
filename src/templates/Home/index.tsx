@@ -14,6 +14,7 @@ import * as Styled from "./styles";
 
 // types
 import { Movie } from "../../shared-types/fetchMovies";
+import Footer from "../../components/Footer";
 
 const HomeTemplate = () => {
 	// get params
@@ -21,9 +22,9 @@ const HomeTemplate = () => {
 	const { page: queryPage = 1 } = router.query;
 	console.log(queryPage);
 	// states
-	const [ topMovies, setTopMovies ] = useState<Movie[]>([]);
-	const [ totalPages, setTotalPages ] = useState<number>();
-	const [ currentPage, setCurrentPage ] = useState<number>();
+	const [topMovies, setTopMovies] = useState<Movie[]>([]);
+	const [totalPages, setTotalPages] = useState<number>();
+	const [currentPage, setCurrentPage] = useState<number>();
 
 	// effect
 	useEffect(() => {
@@ -49,7 +50,7 @@ const HomeTemplate = () => {
 	return (
 		<Styled.Wrapper>
 			<Header />
-			<Heading as="h2" color="primary">
+			<Heading as="h2" color="quaternary">
 				Melhores filmes
 			</Heading>
 			<MoviesContainer
@@ -60,8 +61,12 @@ const HomeTemplate = () => {
 				totalPages={totalPages}
 				query={null}
 			/>
+			<Footer
+				linkedinURL="https//www.linkedin.com/in/emvalencaf"
+				githubURL="https//www.github.com/emvalencaf"
+			/>
 		</Styled.Wrapper>
-  );
+	);
 };
 
 export default HomeTemplate;

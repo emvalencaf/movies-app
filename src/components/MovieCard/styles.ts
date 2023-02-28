@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Achor } from '../Achor/styles';
 import { Title } from '../Heading/styles';
 import { Picture } from '../Picture/styles';
 
@@ -7,11 +8,10 @@ export const Wrapper = styled.div`
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
 		background-color: ${theme.colors.quaternary};
 		max-width: ${theme.frameSizes.smallMedium};
-		max-height: ${theme.frameSizes.largeMedium};
-		height: ${theme.frameSizes.largeMedium};
+		height: ${theme.frameSizes.large};
 		padding: ${theme.spacings.small};
 		border-radius: ${theme.spacings.small} 0px ${theme.spacings.small};
 		gap: ${theme.spacings.mediumSmall};
@@ -31,6 +31,12 @@ export const Wrapper = styled.div`
 			}
 		}
 
+		& ${Achor} {
+			border: 1px solid;
+			padding: ${theme.spacings.small};
+			border-radius: ${theme.spacings.small};
+		}
+
 	`}
 `;
 
@@ -48,6 +54,10 @@ export const ContainerRating = styled.div`
 			color: ${theme.colors.tertiary};
 			height: ${theme.fonts.sizes.normal};
 			width: ${theme.fonts.sizes.normal};
+		}
+
+		&:hover {
+			filter: brightness(220%);
 		}
 	`}
 `;

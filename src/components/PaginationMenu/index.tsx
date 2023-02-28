@@ -67,7 +67,7 @@ const PaginationMenu = ({ currentPage, totalPages, query }: PaginationMenuProps)
 
 		}
 
-		const arr:PageLinkProps[] = [];
+		const arr: PageLinkProps[] = [];
 
 		for (let i = nrStart; i <= nrEnd; i++) {
 			let active: boolean = currentPage === i ? true : false;
@@ -85,11 +85,11 @@ const PaginationMenu = ({ currentPage, totalPages, query }: PaginationMenuProps)
 		setPageLinks((s) => ([...s, ...arr]));
 
 		if (currentPage < totalPages) {
-			setPageLinks((s) => ([...s,{
-				link:`${query ?
+			setPageLinks((s) => ([...s, {
+				link: `${query ?
 					`?q=${query}&`
 					: `?`
-				}page=${currentPage + 1}`,
+					}page=${currentPage + 1}`,
 				children: ">",
 				icon: <ArrowCircleRight />,
 				showOnlyIcon: true,
@@ -99,15 +99,18 @@ const PaginationMenu = ({ currentPage, totalPages, query }: PaginationMenuProps)
 	}
 
 	return (
-		<Styled.Ul>
-			{
-				pageLinks.length >= 1 && pageLinks.map((pageLink, index) => (
-					<PageLink key={index} link={pageLink.link} showOnlyIcon={pageLink.showOnlyIcon} icon={pageLink.icon} active={pageLink.active}>
-						{pageLink.children}
-					</PageLink>
-				))
-			}
-		</Styled.Ul>
+		<Styled.Wrapper>
+
+			<Styled.Ul>
+				{
+					pageLinks.length >= 1 && pageLinks.map((pageLink, index) => (
+						<PageLink key={index} link={pageLink.link} showOnlyIcon={pageLink.showOnlyIcon} icon={pageLink.icon} active={pageLink.active}>
+							{pageLink.children}
+						</PageLink>
+					))
+				}
+			</Styled.Ul>
+		</Styled.Wrapper>
 	);
 };
 

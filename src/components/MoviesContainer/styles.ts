@@ -14,5 +14,7 @@ export const Wrapper = styled.div`
 		justify-content: center;
 		gap: ${theme.spacings.huge};
 		grid-template-columns: repeat(4, ${theme.frameSizes.smallMedium});
+		background-color: ${theme.colors.primary};
+		padding: ${theme.spacings.small};
 	`}
 `;
