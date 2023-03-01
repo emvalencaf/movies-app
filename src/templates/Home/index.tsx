@@ -1,7 +1,7 @@
 // hooks
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import ControllerMovies from "../../api/controllers/movies";
+// import { useRouter } from "next/router";
+// import { useEffect, useState } from "react";
+// import ControllerMovies from "../../api/controllers/movies";
 
 // components
 import Header from "../../components/Header";
@@ -16,8 +16,18 @@ import * as Styled from "./styles";
 import { Movie } from "../../shared-types/fetchMovies";
 import Footer from "../../components/Footer";
 import GoTop from "../../components/GoTop";
+export type HomeTemplateProps = {
+	topMovies: Movie[];
+	totalPages: number;
+	currentPage: number;
+};
 
-const HomeTemplate = () => {
+const HomeTemplate = ({
+	topMovies,
+	totalPages,
+	currentPage,
+}: HomeTemplateProps) => {
+	/*
 	// get params
 	const router = useRouter();
 	const { page: queryPage = 1 } = router.query;
@@ -40,7 +50,7 @@ const HomeTemplate = () => {
 		};
 
 		getMovies();
-	}, [queryPage, currentPage, totalPages]);
+	}, [queryPage, currentPage, totalPages]);*/
 
 	return (
 		<Styled.Wrapper>

@@ -11,7 +11,6 @@ import {
 	ArrowCircleLeft,
 	ArrowCircleRight,
 } from "@styled-icons/material-outlined";
-import { useGetPagination } from "../../hooks/useGetPagination";
 
 // types
 export type PaginationMenuProps = {
@@ -26,19 +25,6 @@ const PaginationMenu = ({
 	query,
 }: PaginationMenuProps) => {
 	const [pageLinks, setPageLinks] = useState<PageLinkProps[]>([]);
-	/*
-	const { nrEnd, nrStart } = useGetPagination(currentPage, totalPages);
-	console.log("nrEnd", nrEnd);
-	console.log("nrStart", nrStart);
-	// effect
-	useEffect(() => {
-		handleSetPagination(nrStart, nrEnd, currentPage, totalPages, query);
-
-		return () => {
-			setPageLinks(() => []);
-		}
-	}, [nrStart, nrEnd, currentPage, totalPages, query]);*/
-
 	// effect
 	useEffect(() => {
 		const pagination = () => {
@@ -52,7 +38,7 @@ const PaginationMenu = ({
 
 		pagination();
 		return () => {
-			setPageLinks((s) => []);
+			setPageLinks(() => []);
 		};
 	}, [currentPage, totalPages, query]);
 

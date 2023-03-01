@@ -1,9 +1,9 @@
 // hooks
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+// import { useRouter } from "next/router";
+// import { useEffect, useState } from "react";
 
 // controller
-import ControllerMovies from "../../api/controllers/movies";
+// import ControllerMovies from "../../api/controllers/movies";
 import Footer from "../../components/Footer";
 import GoTop from "../../components/GoTop";
 import Header from "../../components/Header";
@@ -14,8 +14,20 @@ import { Movie } from "../../shared-types/fetchMovies";
 
 // styles
 import * as Styled from "./styles";
+export type SearchTemplateProps = {
+	movies: Movie[];
+	totalPages: number;
+	currentPage: number;
+	query: string | string[];
+};
 
-const SearchTemplate = () => {
+const SearchTemplate = ({
+	movies,
+	totalPages,
+	currentPage,
+	query,
+}: SearchTemplateProps) => {
+	/*
 	// get search params
 	const router = useRouter();
 	const { q: query = "", page: queryPage = 1 } = router.query;
@@ -41,7 +53,7 @@ const SearchTemplate = () => {
 		};
 
 		getMovies();
-	}, [query, queryPage, currentPage, totalPages]);
+	}, [query, queryPage, currentPage, totalPages]);*/
 
 	return (
 		<Styled.Wrapper>
