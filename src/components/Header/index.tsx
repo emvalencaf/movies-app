@@ -1,9 +1,8 @@
 // components
-import Menu from '../Menu';
+import Menu from "../Menu";
 
 // styles
-import * as Styled from './styles';
-
+import * as Styled from "./styles";
 
 const Header = () => {
 	return (

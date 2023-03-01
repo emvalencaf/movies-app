@@ -1,13 +1,13 @@
-import { Meta, Story } from '@storybook/react/types-6-0';
+import { Meta, Story } from "@storybook/react/types-6-0";
 
 // components
-import PageLink, { PageLinkProps } from '.';
+import PageLink, { PageLinkProps } from ".";
 
 // mock
-import mock from './mock';
+import mock from "./mock";
 
 export default {
-	title: 'PageLink',
+	title: "PageLink",
 	component: PageLink,
 	args: mock,
 } as Meta<PageLinkProps>;

@@ -1,18 +1,18 @@
- // styles
- import * as Styled from './styles';
+// styles
+import * as Styled from "./styles";
 
- // types
- import { Movie } from '../../shared-types/fetchMovies';
-import MovieCard from '../MovieCard';
- export type MoviesContainerProps = {
+// types
+import { Movie } from "../../shared-types/fetchMovies";
+import MovieCard from "../MovieCard";
+export type MoviesContainerProps = {
 	movies?: Movie[];
- };
+};
 
- const MoviesContainer = ({ movies = [] }: MoviesContainerProps) => {
+const MoviesContainer = ({ movies = [] }: MoviesContainerProps) => {
 	return (
 		<Styled.Wrapper>
-			{
-				movies.length >= 1 && movies.map((movie) => (
+			{movies.length >= 1 &&
+				movies.map((movie) => (
 					<MovieCard
 						key={movie.id}
 						id={movie.id}
@@ -20,10 +20,9 @@ import MovieCard from '../MovieCard';
 						vote_average={movie.vote_average}
 						srcImg={`${process.env.NEXT_PUBLIC_API_IMG}/${movie.poster_path}`}
 					/>
-				))
-			}
+				))}
 		</Styled.Wrapper>
 	);
- };
+};
 
- export default MoviesContainer;
+export default MoviesContainer;

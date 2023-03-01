@@ -1,5 +1,5 @@
 // styles
-import * as Styled from './styles';
+import * as Styled from "./styles";
 
 // types
 export type PictureProps = {
@@ -8,13 +8,14 @@ export type PictureProps = {
 	showFigCaption?: boolean;
 };
 
-const Picture = ({ srcImg = '', altText = "a picture", showFigCaption = false }: PictureProps) => {
+const Picture = ({
+	srcImg = "",
+	altText = "a picture",
+	showFigCaption = false,
+}: PictureProps) => {
 	return (
 		<Styled.Picture>
-			<Styled.Image
-				src={srcImg}
-				alt={altText}
-			/>
+			<Styled.Image src={srcImg} alt={altText} />
 			{showFigCaption && <figcaption>{altText}</figcaption>}
 		</Styled.Picture>
 	);

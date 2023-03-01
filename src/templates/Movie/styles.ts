@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-import { Title } from '../../components/Heading/styles';
-import { Picture } from '../../components/Picture/styles';
+import styled, { css } from "styled-components";
+import { Title } from "../../components/Heading/styles";
 
 export const Wrapper = styled.div`
 	${({ theme }) => css`
@@ -30,24 +29,22 @@ export const TaglineContainer = styled.div`
 			color: ${theme.colors.tertiary};
 			height: ${theme.spacings.mediumLarge};
 			width: ${theme.spacings.mediumLarge};
-			filter: brightness(220%) drop-shadow(0px 0px 2px ${theme.colors.senary});
-
+			filter: brightness(220%)
+				drop-shadow(0px 0px 2px ${theme.colors.senary});
 		}
 		> svg:first-child {
 			top: -10px;
 			left: -10px;
 			transform: rotate(180deg);
-
 		}
-		>svg:last-child {
+		> svg:last-child {
 			bottom: -10px;
 			right: -10px;
 		}
-
 	`}
 `;
 
-export const ContainerDetails= styled.div`
+export const ContainerDetails = styled.div`
 	${({ theme }) => css`
 		width: 100%;
 		max-width: 900px;
@@ -63,13 +60,13 @@ export const ContainerDetails= styled.div`
 			padding: 0px;
 			gap: ${theme.spacings.mediumSmall};
 
-			>svg {
+			> svg {
 				width: ${theme.fonts.sizes.medium};
 				height: ${theme.fonts.sizes.medium};
 				transition: all ${theme.transitions.slow} ease-in-out;
 			}
 
-			>svg:hover {
+			> svg:hover {
 				color: ${theme.colors.tertiary};
 				transform: scale(1.4);
 				filter: brightness(220%);
@@ -89,15 +86,15 @@ export const Ul = styled.ul`
 `;
 
 export const Item = styled.li`
-	${({ theme }) => css`
+	${() => css`
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		&::after{
-			content: ", "
+		&::after {
+			content: ", ";
 		}
-		&:last-child::after{
-			content:"."
+		&:last-child::after {
+			content: ".";
 		}
 	`}
 `;

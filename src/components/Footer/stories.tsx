@@ -1,9 +1,9 @@
-import { Meta, Story } from '@storybook/react/types-6-0';
-import Footer, { FooterProps } from '.';
-import mock from './mock';
+import { Meta, Story } from "@storybook/react/types-6-0";
+import Footer, { FooterProps } from ".";
+import mock from "./mock";
 
 export default {
-	title: 'Footer',
+	title: "Footer",
 	component: Footer,
 	args: mock,
 } as Meta<FooterProps>;

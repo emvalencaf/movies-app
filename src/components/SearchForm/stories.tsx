@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react/types-6-0';
-import SearchForm from '.';
+import { Meta, Story } from "@storybook/react/types-6-0";
+import SearchForm from ".";
 
 export default {
-	title: 'SearchForm',
+	title: "SearchForm",
 	component: SearchForm,
 } as Meta;
 

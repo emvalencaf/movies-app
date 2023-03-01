@@ -1,25 +1,31 @@
-// hooks
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-
 // components
-import Heading from '../../components/Heading';
-import MovieCard from '../../components/MovieCard';
-import Footer from '../../components/Footer';
+import Heading from "../../components/Heading";
+import MovieCard from "../../components/MovieCard";
+import Footer from "../../components/Footer";
 
 // styles
-import * as Styled from './styles';
+import * as Styled from "./styles";
 
 // icon
-import { FormatQuote, Wallet, Money, Description, Timer, Speaker, TheaterComedy, Language, Cases } from '@styled-icons/material-outlined';
+import {
+	FormatQuote,
+	Wallet,
+	Money,
+	Description,
+	Timer,
+	Speaker,
+	TheaterComedy,
+	Language,
+	Cases,
+} from "@styled-icons/material-outlined";
 
 // types
-import { MoviePageProps } from '../../shared-types/fetchMovies';
+import { MoviePageProps } from "../../shared-types/fetchMovies";
 
 // utils
-import FormatTimeString from '../../utils/formatTimeString';
-import Header from '../../components/Header';
-import GoTop from '../../components/GoTop';
+import FormatTimeString from "../../utils/formatTimeString";
+import Header from "../../components/Header";
+import GoTop from "../../components/GoTop";
 
 const MovieTemplate = ({ movie }: MoviePageProps) => {
 	console.log(movie);
@@ -44,18 +50,26 @@ const MovieTemplate = ({ movie }: MoviePageProps) => {
 					Orçamento
 				</Heading>
 				<p>
-					{movie.budget.toLocaleString("pt-br", { style: "currency", currency: "USD" })}
+					{movie.budget.toLocaleString("pt-br", {
+						style: "currency",
+						currency: "USD",
+					})}
 				</p>
 				<Heading as="h3" size="medium">
 					<Money />
 					Receita
 				</Heading>
 				<p>
-					{movie.revenue.toLocaleString("pt-br", { style: "currency", currency: "USD" })}
+					{movie.revenue.toLocaleString("pt-br", {
+						style: "currency",
+						currency: "USD",
+					})}
 				</p>
 				<Heading as="h3" size="medium">
 					<Cases />
-					{movie.production_companies.length > 1 ? "Produtoras" : "Produtora"}
+					{movie.production_companies.length > 1
+						? "Produtoras"
+						: "Produtora"}
 				</Heading>
 				<Styled.Ul>
 					{movie.production_companies.map((company) => (
@@ -80,34 +94,36 @@ const MovieTemplate = ({ movie }: MoviePageProps) => {
 					<Timer />
 					Duração
 				</Heading>
-				<p>
-					{FormatTimeString.minutesToHour(Number(movie.runtime))}
-				</p>
+				<p>{FormatTimeString.minutesToHour(Number(movie.runtime))}</p>
 				<Heading as="h3" size="medium">
 					<TheaterComedy />
 					Gênero
 				</Heading>
 				<Styled.Ul>
-					{movie.genres.map((genre) => <Styled.Item key={genre.id}>{genre.name}</Styled.Item>)}
+					{movie.genres.map((genre) => (
+						<Styled.Item key={genre.id}>{genre.name}</Styled.Item>
+					))}
 				</Styled.Ul>
 				<Heading as="h3" size="medium">
 					<Speaker />
 					Língua Original
 				</Heading>
 				<Styled.Ul>
-					{movie.spoken_languages.map((language) => <Styled.Item key={language.iso_639_1}>{language.english_name}</Styled.Item>)}
+					{movie.spoken_languages.map((language) => (
+						<Styled.Item key={language.iso_639_1}>
+							{language.english_name}
+						</Styled.Item>
+					))}
 				</Styled.Ul>
 				<Heading as="h3" size="medium">
 					<Description />
 					Descrição
 				</Heading>
-				<p>
-					{movie.overview}
-				</p>
+				<p>{movie.overview}</p>
 			</Styled.ContainerDetails>
 			<GoTop />
 			<Footer
-				ownerName='Edson Mota Valença Filho'
+				ownerName="Edson Mota Valença Filho"
 				linkedinURL="http://www.linkedin.com/in/emvalencaf"
 				githubURL="http://www.github.com/emvalencaf"
 				homepageURL="https://emvalenca.vercel.app/"

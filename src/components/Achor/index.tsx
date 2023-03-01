@@ -1,6 +1,6 @@
 // styles
-import Link from 'next/link';
-import * as Styled from './styles';
+import Link from "next/link";
+import * as Styled from "./styles";
 
 // types
 export type AchorProps = {
@@ -13,32 +13,22 @@ export type AchorProps = {
 const Achor = ({ children, icon, link, target = "_blank" }: AchorProps) => {
 	const nextLink = link.match(/^\//) ? true : false;
 
-	if (nextLink) return (
-		<Link
-			href={link}
-			legacyBehavior
-			passHref
-		>
-			<Styled.Achor target={target}>
-				{!!icon && icon}
-				<span>
-					{children}
-				</span>
-			</Styled.Achor>
-		</Link>
-	);
+	if (nextLink)
+		return (
+			<Link href={link} legacyBehavior passHref>
+				<Styled.Achor target={target}>
+					{!!icon && icon}
+					<span>{children}</span>
+				</Styled.Achor>
+			</Link>
+		);
 
 	return (
-		<Styled.Achor
-			href={link}
-			target={target}
-		>
+		<Styled.Achor href={link} target={target}>
 			{!!icon && icon}
-			<span>
-				{children}
-			</span>
+			<span>{children}</span>
 		</Styled.Achor>
-	)
+	);
 };
 
 export default Achor;

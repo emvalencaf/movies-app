@@ -1,13 +1,12 @@
-// components
-import Heading from '../Heading';
-import Achor from '../Achor';
-import Picture from '../Picture';
+import Heading from "../Heading";
+import Achor from "../Achor";
+import Picture from "../Picture";
 
 // styles
-import * as Styled from './styles';
+import * as Styled from "./styles";
 
 // icons
-import { Star } from "@styled-icons/material-outlined"
+import { Star } from "@styled-icons/material-outlined";
 
 // types
 export type MovieCardProps = {
@@ -18,17 +17,23 @@ export type MovieCardProps = {
 	showLink?: boolean;
 };
 
-const MovieCard = ({ id, title, vote_average, srcImg, showLink = true }: MovieCardProps) => {
+const MovieCard = ({
+	id,
+	title,
+	vote_average,
+	srcImg,
+	showLink = true,
+}: MovieCardProps) => {
 	return (
 		<Styled.Wrapper>
 			<Picture srcImg={srcImg} />
-			<Heading as="h2" color="secondary" size='medium' weight='bolder'>
+			<Heading as="h2" color="secondary" size="medium" weight="bolder">
 				{title}
 			</Heading>
 			<Styled.ContainerRating>
 				<Star /> {vote_average}
 			</Styled.ContainerRating>
-			{ showLink && <Achor link={`/movie/${id}`}>Detalhes</Achor>}
+			{showLink && <Achor link={`/movie/${id}`}>Detalhes</Achor>}
 		</Styled.Wrapper>
 	);
 };

@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
-import { Achor } from '../Achor/styles';
-import { Title } from '../Heading/styles';
-import { Picture } from '../Picture/styles';
+import styled, { css } from "styled-components";
+import { Achor } from "../Achor/styles";
+import { Title } from "../Heading/styles";
+import { Picture } from "../Picture/styles";
 
 export const Wrapper = styled.div`
 	${({ theme }) => css`
@@ -36,7 +36,6 @@ export const Wrapper = styled.div`
 			padding: ${theme.spacings.small};
 			border-radius: ${theme.spacings.small};
 		}
-
 	`}
 `;
 

@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react/types-6-0';
-import Header from '.';
+import { Meta, Story } from "@storybook/react/types-6-0";
+import Header from ".";
 
 export default {
-	title: 'Header',
+	title: "Header",
 	component: Header,
 } as Meta;
 

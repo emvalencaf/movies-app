@@ -2,7 +2,7 @@ export type FetchMovies = {
 	results: Movie[];
 	page: number;
 	total_pages: number;
-}
+};
 
 export type Movie = {
 	id: string;
@@ -27,21 +27,21 @@ export type MoviePageProps = {
 type Genre = {
 	id: string;
 	name: string;
-}
+};
 
 type ProductionCountry = {
 	iso_3166_1: string;
 	name: string;
-}
+};
 
 type ProductionCompany = {
 	id: string;
 	logo_path: string;
 	origin_country: string;
 	name: string;
-}
+};
 
 type Language = {
 	iso_639_1: string | number;
 	english_name: string;
-}
+};

@@ -24,7 +24,13 @@ const Heading = ({
 	uppercase = false,
 }: HeadingProps) => {
 	return (
-		<Styled.Title color={color} as={as} size={size} uppercase={uppercase} weight={weight}>
+		<Styled.Title
+			color={color}
+			as={as}
+			size={size}
+			uppercase={uppercase}
+			weight={weight}
+		>
 			{children}
 		</Styled.Title>
 	);

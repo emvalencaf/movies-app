@@ -1,13 +1,13 @@
-import { Meta, Story } from '@storybook/react/types-6-0';
+import { Meta, Story } from "@storybook/react/types-6-0";
 
 // component
-import Achor, { AchorProps } from '.';
+import Achor, { AchorProps } from ".";
 
 // mock
-import mock from './mock';
+import mock from "./mock";
 
 export default {
-	title: 'Achor',
+	title: "Achor",
 	component: Achor,
 	args: mock,
 } as Meta<AchorProps>;

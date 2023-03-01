@@ -1,16 +1,15 @@
 // styles
-import * as Styled from './styles';
+import * as Styled from "./styles";
 
 // types and components
-import SocialMedia, { SocialMediaProps } from '../SocialMedia';
+import SocialMedia, { SocialMediaProps } from "../SocialMedia";
 export type FooterProps = SocialMediaProps & {
 	year?: string;
 	ownerName?: string;
 };
 
 // utils
-import DateStringFormating from '../../utils/dateString';
-
+import DateStringFormating from "../../utils/dateString";
 
 const Footer = ({
 	instaURL = "",

@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { Picture } from '../Picture/styles';
+import styled, { css } from "styled-components";
+import { Picture } from "../Picture/styles";
 
 export const Wrapper = styled.div`
 	${({ theme }) => css`

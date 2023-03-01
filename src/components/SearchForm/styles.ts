@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
-import { Button } from '../Button/styles';
-import { Form } from '../Form/styles';
-import { Input, Wrapper as WrapperInput } from '../TextInput/styles';
+import styled, { css } from "styled-components";
+import { Button } from "../Button/styles";
+import { Form } from "../Form/styles";
+import { Input, Wrapper as WrapperInput } from "../TextInput/styles";
 
 export const Wrapper = styled.div`
 	${({ theme }) => css`

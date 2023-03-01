@@ -1,27 +1,36 @@
 // hooks
-import { Close } from '@styled-icons/material-outlined';
-import { MutableRefObject, SyntheticEvent, useRef, useState } from 'react';
+import { Close } from "@styled-icons/material-outlined";
+import { MutableRefObject, SyntheticEvent, useRef, useState } from "react";
 
 // components
-import Button from '../Button';
+import Button from "../Button";
 
 // styles
-import * as Styled from './styles';
+import * as Styled from "./styles";
 
 // types
 export type FormProps = {
 	children: React.ReactNode;
 	btnIcon?: React.ReactNode;
 	btnText?: string;
-	onSubmit?: <T>(form?: MutableRefObject<HTMLFormElement>) => Promise<T>| void;
+	onSubmit?: <T>(
+		form?: MutableRefObject<HTMLFormElement>
+	) => Promise<T> | void;
 	asyncOnSubmit?: boolean;
 	reference?: HTMLFormElement;
 };
 
 // icon
-import { Timer } from "@styled-icons/material-outlined"
+import { Timer } from "@styled-icons/material-outlined";
 
-const Form = ({ children, btnIcon, btnText = "enviar", reference, onSubmit, asyncOnSubmit = false }: FormProps) => {
+const Form = ({
+	children,
+	btnIcon,
+	btnText = "enviar",
+	reference,
+	onSubmit,
+	asyncOnSubmit = false,
+}: FormProps) => {
 	// ref
 	const formRef = useRef<HTMLFormElement | null>(reference);
 
@@ -29,7 +38,6 @@ const Form = ({ children, btnIcon, btnText = "enviar", reference, onSubmit, asyn
 	const [errorMessage, setErrorMessage] = useState("");
 	const [loading, setLoading] = useState(false);
 	const [visible, setVisible] = useState(!!errorMessage);
-
 
 	// handle events
 	const handleSubmit = (event: SyntheticEvent) => {
@@ -40,9 +48,7 @@ const Form = ({ children, btnIcon, btnText = "enviar", reference, onSubmit, asyn
 				if (onSubmit) {
 					setLoading(true);
 					try {
-
 						await onSubmit(formRef);
-
 					} catch (err) {
 						setErrorMessage(err.message);
 						setVisible(true);
@@ -50,7 +56,7 @@ const Form = ({ children, btnIcon, btnText = "enviar", reference, onSubmit, asyn
 					setLoading(false);
 					return;
 				}
-			}
+			};
 
 			asyncFn();
 		} else {
@@ -65,11 +71,7 @@ const Form = ({ children, btnIcon, btnText = "enviar", reference, onSubmit, asyn
 		>
 			{children}
 			<Styled.Alert visible={visible} isSuccess={!!errorMessage}>
-				{
-					<span>
-						{!!errorMessage && errorMessage}
-					</span>
-				}
+				{<span>{!!errorMessage && errorMessage}</span>}
 				<Styled.CloseButton onClick={() => setVisible(false)}>
 					{<Close />}
 				</Styled.CloseButton>

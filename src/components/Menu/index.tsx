@@ -1,15 +1,14 @@
-
 // components
-import TextInput from '../TextInput';
-import Form from '../Form';
-import SearchForm from '../SearchForm';
+import TextInput from "../TextInput";
+import Form from "../Form";
+import SearchForm from "../SearchForm";
 
 // styles
-import Achor from '../Achor';
-import * as Styled from './styles';
+import Achor from "../Achor";
+import * as Styled from "./styles";
 
 // icons
-import { MovieCreation } from "@styled-icons/material-outlined"
+import { MovieCreation } from "@styled-icons/material-outlined";
 
 const Menu = () => {
 	return (

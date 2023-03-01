@@ -29,23 +29,17 @@ const HomeTemplate = () => {
 
 	// effect
 	useEffect(() => {
-
 		const getMovies = async () => {
 			const response = await ControllerMovies.getTopMovies(queryPage);
 			console.log(response);
-			const {
-				results,
-				page,
-				total_pages,
-			} = response;
+			const { results, page, total_pages } = response;
 
-			setTopMovies(() => ([...results]));
+			setTopMovies(() => [...results]);
 			setCurrentPage(() => page);
 			setTotalPages(() => total_pages);
 		};
 
 		getMovies();
-
 	}, [queryPage, currentPage, totalPages]);
 
 	return (
@@ -54,9 +48,7 @@ const HomeTemplate = () => {
 			<Heading as="h2" color="quaternary">
 				Melhores filmes
 			</Heading>
-			<MoviesContainer
-				movies={topMovies}
-			/>
+			<MoviesContainer movies={topMovies} />
 			<PaginationMenu
 				currentPage={currentPage}
 				totalPages={totalPages}

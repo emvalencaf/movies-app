@@ -1,11 +1,11 @@
-export default class PaginationFormat{
-	static getNavegation (currentPage: number, totalPages: number) {
+export default class PaginationFormat {
+	static getNavegation(currentPage: number, totalPages: number) {
 		// limit of pages
-		let pageLimit: number = 5;
+		let pageLimit = 5;
 
 		// first node and last node
-		let nrStart: number = 0;
-		let nrEnd: number = 0;
+		let nrStart = 0;
+		let nrEnd = 0;
 
 		if (totalPages < pageLimit) pageLimit = totalPages - currentPage;
 
@@ -13,8 +13,10 @@ export default class PaginationFormat{
 			// set first page
 			nrStart = 1;
 			nrEnd = pageLimit;
-
-		} else if (currentPage - parseInt((pageLimit / 2).toString()) > totalPages) {
+		} else if (
+			currentPage - parseInt((pageLimit / 2).toString()) >
+			totalPages
+		) {
 			// set last pages
 			nrStart = totalPages - pageLimit;
 			nrEnd = totalPages;
@@ -22,9 +24,9 @@ export default class PaginationFormat{
 			//set middle page
 			nrStart = currentPage - parseInt((pageLimit / 2).toString());
 			// nrEnd = currentPage + parseInt((pageLimit / 2).toString());
-			currentPage + parseInt((pageLimit/2).toString()) > totalPages ?
-				nrEnd = totalPages
-				: nrEnd = currentPage + parseInt((pageLimit / 2).toString());
+			currentPage + parseInt((pageLimit / 2).toString()) > totalPages
+				? (nrEnd = totalPages)
+				: (nrEnd = currentPage + parseInt((pageLimit / 2).toString()));
 			console.log("nrEnd: ", nrEnd);
 		}
 

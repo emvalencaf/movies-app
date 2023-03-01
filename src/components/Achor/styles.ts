@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const Achor = styled.a`
 	${({ theme }) => css`
@@ -15,7 +15,7 @@ export const Achor = styled.a`
 		> svg {
 			height: ${theme.fonts.sizes.medium};
 			width: ${theme.fonts.sizes.medium};
-			transition:  all ${theme.transitions.slow} ease-in-out;
+			transition: all ${theme.transitions.slow} ease-in-out;
 		}
 
 		&:hover {

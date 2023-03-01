@@ -1,13 +1,13 @@
-import styled, { css, DefaultTheme } from 'styled-components';
-import { Achor } from '../Achor/styles';
+import styled, { css, DefaultTheme } from "styled-components";
+import { Achor } from "../Achor/styles";
 
 type ListItemProps = {
 	theme: DefaultTheme;
 	active: boolean;
 	showOnlyIcon: boolean;
-}
+};
 
-const activeList = (theme:DefaultTheme) => css`
+const activeList = (theme: DefaultTheme) => css`
 	background-color: ${theme.colors.tertiary};
 `;
 
@@ -25,7 +25,7 @@ export const ListItem = styled.li<ListItemProps>`
 
 		& ${Achor} {
 			> span {
-				display: ${showOnlyIcon? "none": "inline"};
+				display: ${showOnlyIcon ? "none" : "inline"};
 			}
 		}
 

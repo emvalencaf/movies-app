@@ -1,8 +1,8 @@
 // components
-import Achor from '../Achor';
+import Achor from "../Achor";
 
 // styles
-import * as Styled from './styles';
+import * as Styled from "./styles";
 
 // types
 export type PageLinkProps = {
@@ -13,7 +13,13 @@ export type PageLinkProps = {
 	link: string;
 };
 
-const PageLink = ({ children, link, icon, showOnlyIcon = false, active= false }: PageLinkProps) => {
+const PageLink = ({
+	children,
+	link,
+	icon,
+	showOnlyIcon = false,
+	active = false,
+}: PageLinkProps) => {
 	return (
 		<Styled.ListItem showOnlyIcon={showOnlyIcon} active={active}>
 			<Achor link={link} target="_self" icon={!!icon && icon}>

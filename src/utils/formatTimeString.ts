@@ -1,15 +1,16 @@
 export default class FormatTimeString {
+	static minutesToHour(minutes: number) {
+		const hours = minutes / 60;
 
-    static minutesToHour(minutes: number){
+		if (FormatTimeString.isInteger(hours))
+			return parseInt(hours.toString());
 
-        const hours = minutes / 60;
+		return `${parseInt(hours.toString())}h ${parseInt(
+			(minutes % 60).toString()
+		)} min`;
+	}
 
-        if(FormatTimeString.isInteger(hours)) return parseInt(hours.toString());
-
-        return `${parseInt(hours.toString())}h ${parseInt((minutes % 60).toString())} min`;
-    }
-
-    static isInteger(n: number){
-        return n % 1 === 0;
-    }
+	static isInteger(n: number) {
+		return n % 1 === 0;
+	}
 }

@@ -28,4 +28,3 @@ describe("<Footer />", () => {
 		expect(container).toMatchSnapshot();
 	});
 });
-

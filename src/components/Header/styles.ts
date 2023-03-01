@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { Achor } from '../Achor/styles';
+import styled, { css } from "styled-components";
+import { Achor } from "../Achor/styles";
 
 export const Header = styled.header`
 	${({ theme }) => css`
@@ -15,6 +15,6 @@ export const Header = styled.header`
 		align-items: center;
 		justify-content: center;
 		background-color: ${theme.colors.quaternary};
-		gap: ${theme.spacings.mediumSmall}
+		gap: ${theme.spacings.mediumSmall};
 	`}
 `;

@@ -17,24 +17,20 @@ const SearchForm = () => {
 	const [search, setSearch] = useState("");
 
 	// redirect
-	const router = useRouter()
+	const router = useRouter();
 
 	// handleSubmit
 
 	const handleSubmit = () => {
-
-		if(!search) return;
+		if (!search) return;
 
 		// redirect to search page
 		router.push(`/search?q=${search}`);
-	}
+	};
 
 	return (
 		<Styled.Wrapper>
-			<Form
-				btnIcon={<Search />}
-				onSubmit={handleSubmit}
-			>
+			<Form btnIcon={<Search />} onSubmit={handleSubmit}>
 				<TextInput
 					type="text"
 					name={"search"}
