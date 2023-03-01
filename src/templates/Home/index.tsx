@@ -15,6 +15,7 @@ import * as Styled from "./styles";
 // types
 import { Movie } from "../../shared-types/fetchMovies";
 import Footer from "../../components/Footer";
+import GoTop from "../../components/GoTop";
 
 const HomeTemplate = () => {
 	// get params
@@ -61,9 +62,11 @@ const HomeTemplate = () => {
 				totalPages={totalPages}
 				query={null}
 			/>
+			<GoTop />
 			<Footer
-				linkedinURL="https//www.linkedin.com/in/emvalencaf"
-				githubURL="https//www.github.com/emvalencaf"
+				linkedinURL="http://www.linkedin.com/in/emvalencaf"
+				githubURL="http://www.github.com/emvalencaf"
+				homepageURL="https://emvalenca.vercel.app/"
 			/>
 		</Styled.Wrapper>
 	);

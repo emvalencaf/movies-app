@@ -12,10 +12,12 @@ export type Movie = {
 	budget: string | number;
 	revenue: string | number;
 	runtime: string | number;
-	genre: Genre[];
-	spoken_language: Language[];
+	genres: Genre[];
+	spoken_languages: Language[];
 	overview: string;
 	tagline: string;
+	production_countries: ProductionCountry[];
+	production_companies: ProductionCompany[];
 };
 
 export type MoviePageProps = {
@@ -24,6 +26,18 @@ export type MoviePageProps = {
 
 type Genre = {
 	id: string;
+	name: string;
+}
+
+type ProductionCountry = {
+	iso_3166_1: string;
+	name: string;
+}
+
+type ProductionCompany = {
+	id: string;
+	logo_path: string;
+	origin_country: string;
 	name: string;
 }
 

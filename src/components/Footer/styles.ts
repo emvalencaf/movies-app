@@ -16,6 +16,8 @@ export const Wrapper = styled.footer`
 		flex-flow: column wrap;
 		align-items: center;
 		justify-content: center;
+		color: ${theme.colors.secondary};
+		width: 100%;
 		gap: ${theme.spacings.xsmall};
 		margin-top: ${theme.spacings.medium};
 		padding: ${theme.spacings.medium};

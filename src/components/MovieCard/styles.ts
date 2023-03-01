@@ -48,7 +48,7 @@ export const ContainerRating = styled.div`
 		justify-content: center;
 		gap: ${theme.spacings.tiny};
 		width: 100%;
-
+		color: ${theme.colors.secondary};
 
 		> svg {
 			color: ${theme.colors.tertiary};
@@ -58,6 +58,10 @@ export const ContainerRating = styled.div`
 
 		&:hover {
 			filter: brightness(220%);
+
+			> svg {
+				color: ${theme.colors.senary};
+			}
 		}
 	`}
 `;

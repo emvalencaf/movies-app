@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Title } from '../../components/Heading/styles';
+import { Picture } from '../../components/Picture/styles';
 
 export const Wrapper = styled.div`
 	${({ theme }) => css`
@@ -9,6 +10,9 @@ export const Wrapper = styled.div`
 		justify-content: center;
 		gap: ${theme.spacings.mediumLarge};
 		background-color: ${theme.colors.primary};
+		& p {
+			text-align: justify;
+		}
 	`}
 `;
 
@@ -46,9 +50,12 @@ export const TaglineContainer = styled.div`
 export const ContainerDetails= styled.div`
 	${({ theme }) => css`
 		width: 100%;
+		max-width: 900px;
 		padding: ${theme.spacings.hero};
 		color: ${theme.colors.secondary};
 		font-size: ${theme.fonts.sizes.normal};
+		background-color: ${theme.colors.quaternary};
+		border-radius: 20px 0px 20px;
 		& ${Title} {
 			text-align: justify;
 			display: flex;
@@ -67,6 +74,30 @@ export const ContainerDetails= styled.div`
 				transform: scale(1.4);
 				filter: brightness(220%);
 			}
+		}
+	`}
+`;
+
+export const Ul = styled.ul`
+	${({ theme }) => css`
+		list-style-type: none;
+		display: flex;
+		margin: ${theme.spacings.medium};
+		padding: 0px;
+		gap: ${theme.spacings.tiny};
+	`}
+`;
+
+export const Item = styled.li`
+	${({ theme }) => css`
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&::after{
+			content: ", "
+		}
+		&:last-child::after{
+			content:"."
 		}
 	`}
 `;

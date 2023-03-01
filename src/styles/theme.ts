@@ -1,11 +1,19 @@
 export const theme = {
   colors: {
+/*
 	primary: "hsl(180, 93%, 11%)",
 	secondary: "hsla(240, 100%, 99%, 0.4)",
 	tertiary: "hsl(139, 11%, 34%)",
 	quaternary: "hsl(180, 94%, 7%)",
 	quinary: "hsl(139, 11%, 34%)",
 	senary: "hsl(141, 43%, 56%)",
+*/
+	primary: "#011526",
+	secondary: "#4C5973",
+	tertiary: "#F2C094",
+	quaternary: "#02070D",
+	quinary: "#7B838C",
+	senary: "#6D86A6",
 	warning: "rgb(247, 38, 115)",
 	success: "rgb(172, 243, 157)",
 	info: "rgb(85, 193, 255)",

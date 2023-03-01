@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 
 // controller
 import ControllerMovies from '../../api/controllers/movies';
+import Footer from '../../components/Footer';
+import GoTop from '../../components/GoTop';
 import Header from '../../components/Header';
 import Heading from '../../components/Heading';
 import MoviesContainer from '../../components/MoviesContainer';
@@ -47,7 +49,7 @@ const SearchTemplate = () => {
 	return (
 		<Styled.Wrapper>
 			<Header />
-			<Heading as="h2" color="primary">
+			<Heading as="h2" color="secondary">
 				Resultado para: {query}
 			</Heading>
 			<MoviesContainer
@@ -57,6 +59,13 @@ const SearchTemplate = () => {
 				currentPage={currentPage}
 				totalPages={totalPages}
 				query={query}
+			/>
+			<GoTop />
+			<Footer
+				ownerName='Edson Mota Valença Filho'
+				linkedinURL="http://www.linkedin.com/in/emvalencaf"
+				githubURL="http://www.github.com/emvalencaf"
+				homepageURL="https://emvalenca.vercel.app/"
 			/>
 		</Styled.Wrapper>
 	);

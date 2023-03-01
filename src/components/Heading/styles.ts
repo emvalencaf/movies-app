@@ -49,11 +49,16 @@ const titleCase = (uppercase: boolean) => css`
 	text-transform: ${uppercase ? "uppercase" : "none"};
 `;
 
+const titleWeight = (weight: string) => css`
+	font-weight: ${weight};
+`;
+
 export const Title = styled.h1<HeadingProps>`
-	${({ theme, size, uppercase, color }) => css`
+	${({ theme, size, uppercase, color, weight }) => css`
 		color: ${theme.colors[color]};
 		line-height: 1.2;
 		${titleSize[size](theme, size)};
 		${titleCase(uppercase)};
+		${titleWeight(weight)}
 	`}
 `;
