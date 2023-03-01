@@ -27,13 +27,13 @@ export default class ControllerMovies {
 			console.log(err);
 		}
 	}
-	static async getMovie(id:string) {
+	static async getMovie(id:string | string[]) {
 
 		try {
 
-			if (id) throw new Error("must inform an id");
+			if (!id) throw new Error("must inform an id");
 
-			const url = `${process.env.NEXT_PUBLIC_API}/${id}?${process.env.NEXT_PUBLIC_API_KEY}`;
+			const url = `${process.env.NEXT_PUBLIC_API}/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`;
 
 			return await ServiceMovies.getMovies(url);
 

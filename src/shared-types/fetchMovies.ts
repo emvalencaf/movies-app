@@ -15,6 +15,11 @@ export type Movie = {
 	genre: Genre[];
 	spoken_language: Language[];
 	overview: string;
+	tagline: string;
+};
+
+export type MoviePageProps = {
+	movie: Movie;
 };
 
 type Genre = {
