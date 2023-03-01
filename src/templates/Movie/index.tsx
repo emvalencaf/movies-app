@@ -28,7 +28,6 @@ import Header from "../../components/Header";
 import GoTop from "../../components/GoTop";
 
 const MovieTemplate = ({ movie }: MoviePageProps) => {
-	console.log(movie);
 	return (
 		<Styled.Wrapper>
 			<Header />
@@ -123,6 +122,7 @@ const MovieTemplate = ({ movie }: MoviePageProps) => {
 			</Styled.ContainerDetails>
 			<GoTop />
 			<Footer
+				sizes="big"
 				ownerName="Edson Mota Valença Filho"
 				linkedinURL="http://www.linkedin.com/in/emvalencaf"
 				githubURL="http://www.github.com/emvalencaf"

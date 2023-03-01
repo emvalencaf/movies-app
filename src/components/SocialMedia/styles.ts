@@ -20,14 +20,14 @@ export const Wrapper = styled.div<SocialMediaProps>`
 	${({ theme, sizes }) => css`
 		& svg,
 		& a {
-			color: ${theme.colors.primary};
+			color: ${theme.colors.tertiary};
 			${logoSizes[sizes](theme)}
 			transition: all ${theme.transitions.fast} ease-in-out;
 		}
 
 		& svg:hover {
 			transform: scale(1.2);
-			color: ${theme.colors.deepWhite};
+			color: ${theme.colors.senary};
 			opacity: 0.8;
 			filter: drop-shadow(0 0 0.75rem ${theme.colors.tertiary});
 		}
@@ -36,6 +36,6 @@ export const Wrapper = styled.div<SocialMediaProps>`
 
 export const SocialMediaLink = styled.a`
 	${({ theme }) => css`
-		color: ${theme.colors.primary};
+		color: ${theme.colors.tertiary};
 	`}
 `;

@@ -27,34 +27,6 @@ const SearchTemplate = ({
 	currentPage,
 	query,
 }: SearchTemplateProps) => {
-	/*
-	// get search params
-	const router = useRouter();
-	const { q: query = "", page: queryPage = 1 } = router.query;
-
-	// states
-	const [movies, setMovies] = useState<Movie[]>([]);
-	const [totalPages, setTotalPages] = useState<number>();
-	const [currentPage, setCurrentPage] = useState<number>();
-
-	// effects
-	useEffect(() => {
-		const getMovies = async () => {
-			const response = await ControllerMovies.getSearchedMovies(
-				query,
-				queryPage
-			);
-			console.log(response);
-			const { results, page, total_pages } = response;
-
-			setMovies(() => [...results]);
-			setCurrentPage(() => page);
-			setTotalPages(() => total_pages);
-		};
-
-		getMovies();
-	}, [query, queryPage, currentPage, totalPages]);*/
-
 	return (
 		<Styled.Wrapper>
 			<Header />
@@ -69,6 +41,7 @@ const SearchTemplate = ({
 			/>
 			<GoTop />
 			<Footer
+				sizes="big"
 				ownerName="Edson Mota Valença Filho"
 				linkedinURL="http://www.linkedin.com/in/emvalencaf"
 				githubURL="http://www.github.com/emvalencaf"

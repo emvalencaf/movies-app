@@ -17,6 +17,17 @@ export const Wrapper = styled.div`
 
 export const TaglineContainer = styled.div`
 	${({ theme }) => css`
+		@media ${theme.media.gteOrEqLarge} {
+			max-width: 600px;
+		}
+
+		@media ${theme.media.lteOrEqLarge} {
+			max-width: 400px;
+		}
+
+		@media ${theme.media.lteOrEqMedium} {
+			max-width: 300px;
+		}
 		position: relative;
 		color: ${theme.colors.secondary};
 		border-radius: 10px 5px 10px;
@@ -46,8 +57,25 @@ export const TaglineContainer = styled.div`
 
 export const ContainerDetails = styled.div`
 	${({ theme }) => css`
+		@media ${theme.media.gteOrEqLarge} {
+			max-width: 900px;
+		}
+
+		@media ${theme.media.lteOrEqLarge} {
+			max-width: 600px;
+		}
+
+		@media ${theme.media.lteOrEqMedium} {
+			max-width: 300px;
+			padding: ${theme.spacings.mediumSmall};
+			font-size: ${theme.fonts.sizes.small};
+
+			& ${Title} {
+				font-size: ${theme.fonts.sizes.normal};
+			}
+		}
+
 		width: 100%;
-		max-width: 900px;
 		padding: ${theme.spacings.hero};
 		color: ${theme.colors.secondary};
 		font-size: ${theme.fonts.sizes.normal};
@@ -79,6 +107,7 @@ export const Ul = styled.ul`
 	${({ theme }) => css`
 		list-style-type: none;
 		display: flex;
+		flex-wrap: wrap;
 		margin: ${theme.spacings.medium};
 		padding: 0px;
 		gap: ${theme.spacings.tiny};

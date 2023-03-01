@@ -27,31 +27,6 @@ const HomeTemplate = ({
 	totalPages,
 	currentPage,
 }: HomeTemplateProps) => {
-	/*
-	// get params
-	const router = useRouter();
-	const { page: queryPage = 1 } = router.query;
-	console.log(queryPage);
-	// states
-	const [topMovies, setTopMovies] = useState<Movie[]>([]);
-	const [totalPages, setTotalPages] = useState<number>();
-	const [currentPage, setCurrentPage] = useState<number>();
-
-	// effect
-	useEffect(() => {
-		const getMovies = async () => {
-			const response = await ControllerMovies.getTopMovies(queryPage);
-			console.log(response);
-			const { results, page, total_pages } = response;
-
-			setTopMovies(() => [...results]);
-			setCurrentPage(() => page);
-			setTotalPages(() => total_pages);
-		};
-
-		getMovies();
-	}, [queryPage, currentPage, totalPages]);*/
-
 	return (
 		<Styled.Wrapper>
 			<Header />
@@ -66,6 +41,8 @@ const HomeTemplate = ({
 			/>
 			<GoTop />
 			<Footer
+				sizes="big"
+				ownerName="Edson Mota Valença Filho"
 				linkedinURL="http://www.linkedin.com/in/emvalencaf"
 				githubURL="http://www.github.com/emvalencaf"
 				homepageURL="https://emvalenca.vercel.app/"
