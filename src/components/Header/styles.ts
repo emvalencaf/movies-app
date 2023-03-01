@@ -14,6 +14,7 @@ export const Header = styled.header`
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
+		width: 100%;
 		background-color: ${theme.colors.quaternary};
 		gap: ${theme.spacings.mediumSmall};
 	`}
