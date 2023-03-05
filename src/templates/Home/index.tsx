@@ -30,7 +30,7 @@ const HomeTemplate = ({
 	return (
 		<Styled.Wrapper>
 			<Header />
-			<Heading as="h2" color="quaternary">
+			<Heading as="h2" color="secondary">
 				Melhores filmes
 			</Heading>
 			<MoviesContainer movies={topMovies} />
